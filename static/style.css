@@ -1,0 +1,86 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.disc img {
+    width: 20%; /* Điều chỉnh kích thước đĩa */
+    height: auto; /* Thêm dòng này để đảm bảo kích thước ảnh tự động điều chỉnh */
+    display: block; /* Thêm dòng này để xác định vị trí căn giữa */
+    margin: 0 auto; /* Thêm dòng này để căn giữa */
+    animation: rotate-disc 10s linear infinite;
+}
+
+
+.play-button img {
+    width: 6%;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.time {
+    position: absolute;
+    top: 30px; /* Điều chỉnh vị trí từ phần trên cùng */
+    left: 50%;
+    transform: translateX(-50%); /* Để căn giữa theo trục ngang */
+    text-align: center;
+    font-size: 36px;
+    color: black;
+}
+
+.greeting {
+    position: absolute;
+    bottom: 30px; /* Điều chỉnh vị trí từ phần dưới cùng */
+    left: 50%;
+    transform: translateX(-50%); /* Để căn giữa theo trục ngang */
+    text-align: center;
+    font-size: 24px;
+    color: white;
+}
+
+
+@keyframes rotate-disc {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+/* Bọc hình ảnh nền trong một div */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1; /* Đảm bảo hình ảnh nền nằm phía sau các phần tử khác */
+}
+
+/* Đảm bảo hình ảnh nền bao phủ toàn bộ màn hình */
+.background img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
