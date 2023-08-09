@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Chill Music Player</title>
+</head>
+<body>
+    <div class="background">
+        <img src="{{ url_for('static', filename='background.jpg') }}" alt="Background Image">
+    </div>
+    <div class="container">
+        <div class="time" id="time">
+            00:00:00
+        </div>
+        <div class="disc">
+            <img src="{{ url_for('static', filename='disc.png') }}" alt="Disc Image">
+        </div>
+        <div class="play-button">
+            <img src="{{ url_for('static', filename='play_button.png') }}" alt="Play Button">
+        </div>
+        <div class="greeting">
+            Have a wonderful day! 
+        </div>
+    </div>
+    <audio id="music" src="{{ url_for('static', filename='music.wav') }}" preload="auto"></audio>
+</body>
+<!-- Các phần tử HTML khác -->
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</html>
